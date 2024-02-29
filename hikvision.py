@@ -15,7 +15,7 @@ import time
 import datetime
 import logging
 import uuid
-
+import os, sys
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
@@ -675,5 +675,6 @@ class HikCamera(object):
                 if sensor[1] == int(channel):
                     self.event_states[event][i] = attr
         except KeyError:
-            _LOGGING.debug('Error updating attributes for: (%s, %s)',
-                           event, channel)
+            _LOGGING.debug('Error updating attributes for: (%s, %s)',event, channel)
+
+    
